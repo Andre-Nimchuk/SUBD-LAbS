@@ -1,11 +1,11 @@
-INSERT INTO Авто(Код_авто,Тип_авто, Колір, Модель, Рік_випуску, Максимальна_швидкість) VALUES 
+INSERT INTO  РђРІС‚Рѕ(РљРѕРґ_Р°РІС‚Рѕ,РўРёРї_Р°РІС‚Рѕ, РљРѕР»С–СЂ, РњРѕРґРµР»СЊ, Р С–Рє_РІРёРїСѓСЃРєСѓ, РњР°РєСЃРёРјР°Р»СЊРЅР°_С€РІРёРґРєС–СЃС‚СЊ) VALUES 
 (3, 4, 'grey', 'Lotus', 2015, 250),
 (4, 5, 'black', 'Lamborgini', 2020, 380),
 (5, 6, 'yellow', 'Aston-Martin', 2010, 320);
 
 BULK
-INSERT Авто
-FROM 'D:\Univer\3CursLabs\СУБД\Авто.csv'
+INSERT РђРІС‚Рѕ
+FROM 'D:\Univer\3CursLabs\РЎРЈР‘Р”\РђРІС‚Рѕ.csv'
 WITH
 (
 FIELDTERMINATOR = ',',
@@ -13,15 +13,16 @@ ROWTERMINATOR = '\n'
 );
 
 BULK
-INSERT Салон
-FROM 'D:\Univer\3CursLabs\СУБД\Салон.csv'
+INSERT РЎР°Р»РѕРЅ
+FROM 'D:\Univer\3CursLabs\РЎРЈР‘Р”\РЎР°Р»РѕРЅ.csv'
 WITH
 (
 FIELDTERMINATOR = ',',
 ROWTERMINATOR = '\n'
 );
-UPDATE Авто SET Рік_випуску='1998' WHERE Тип_авто='2';
+UPDATE РђРІС‚Рѕ SET Р С–Рє_РІРёРїСѓСЃРєСѓ='1998' WHERE РўРёРї_Р°РІС‚Рѕ='2';
 
-UPDATE Авто SET Максимальна_швидкість=Максимальна_швидкість+10;
+UPDATE РђРІС‚Рѕ SET РњР°РєСЃРёРјР°Р»СЊРЅР°_С€РІРёРґРєС–СЃС‚СЊ=РњР°РєСЃРёРјР°Р»СЊРЅР°_С€РІРёРґРєС–СЃС‚СЊ+10;
 
-DELETE FROM Авто WHERE Рік_випуску< GetDate();
+DELETE FROM РђРІС‚Рѕ WHERE Р С–Рє_РІРёРїСѓСЃРєСѓ< GetDate();
+
