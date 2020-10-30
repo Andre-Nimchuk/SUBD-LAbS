@@ -1,25 +1,25 @@
-ALTER TABLE Договір_поставки
-DROP CONSTRAINT Фксалону;
+ALTER TABLE Р”РѕРіРѕРІС–СЂ_РїРѕСЃС‚Р°РІРєРё
+DROP CONSTRAINT Р¤РєСЃР°Р»РѕРЅСѓ;
 
-ALTER TABLE Салон
-	DROP COLUMN Вулиця;
-ALTER TABLE Салон
-ALTER COLUMN Будинок decimal(9,0) NOT NULL;
+ALTER TABLE РЎР°Р»РѕРЅ
+	DROP COLUMN Р’СѓР»РёС†СЏ;
+ALTER TABLE РЎР°Р»РѕРЅ
+ALTER COLUMN Р‘СѓРґРёРЅРѕРє decimal(9,0) NOT NULL;
 
-ALTER TABLE Контракт
-ALTER COLUMN Дата_заключення varchar(20) NULL;
+ALTER TABLE РљРѕРЅС‚СЂР°РєС‚
+ALTER COLUMN Р”Р°С‚Р°_Р·Р°РєР»СЋС‡РµРЅРЅСЏ varchar(20) NULL;
 
-ALTER TABLE Договір_про_оренду
-ALTER COLUMN Код_договору_про_оренду decimal(9,0) NOT NULL;
+ALTER TABLE Р”РѕРіРѕРІС–СЂ_РїСЂРѕ_РѕСЂРµРЅРґСѓ
+ALTER COLUMN РљРѕРґ_РґРѕРіРѕРІРѕСЂСѓ_РїСЂРѕ_РѕСЂРµРЅРґСѓ decimal(9,0) NOT NULL;
 
-ALTER TABLE Договір_про_оренду
-ADD ID_паспорта nvarchar(20);
+ALTER TABLE Р”РѕРіРѕРІС–СЂ_РїСЂРѕ_РѕСЂРµРЅРґСѓ
+ADD ID_РїР°СЃРїРѕСЂС‚Р° nvarchar(20);
 
-ALTER TABLE Договір_про_оренду
-    ADD CONSTRAINT ID_паспорта  UNIQUE (Код_договору_про_оренду, Language);
+ALTER TABLE Р”РѕРіРѕРІС–СЂ_РїСЂРѕ_РѕСЂРµРЅРґСѓ
+    ADD CONSTRAINT ID_РїР°СЃРїРѕСЂС‚Р°  UNIQUE (РљРѕРґ_РґРѕРіРѕРІРѕСЂСѓ_РїСЂРѕ_РѕСЂРµРЅРґСѓ, Language);
 
-	ALTER TABLE Договір_поставки
-DROP CONSTRAINT Фксалону;
+	ALTER TABLE Р”РѕРіРѕРІС–СЂ_РїРѕСЃС‚Р°РІРєРё
+DROP CONSTRAINT Р¤РєСЃР°Р»РѕРЅСѓ;
 
-ALTER TABLE Договір_поставки
-ADD CONSTRAINT Фксалону FOREIGN KEY (Вулиця) REFERENCES Салон(Код_Салону) ON DELETE NO ACTION;
+ALTER TABLE Р”РѕРіРѕРІС–СЂ_РїРѕСЃС‚Р°РІРєРё
+ADD CONSTRAINT Р¤РєСЃР°Р»РѕРЅСѓ FOREIGN KEY (Р’СѓР»РёС†СЏ) REFERENCES РЎР°Р»РѕРЅ(РљРѕРґ_РЎР°Р»РѕРЅСѓ) ON DELETE NO ACTION;
